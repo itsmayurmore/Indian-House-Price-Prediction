@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='i_style.css') }}">
+
+</head>
+<body>
+
+<body>
+  <form method='POST' action='/result'>
+  <fieldset>
+    <legend>Details</legend>
+
+    <section class="inputLabel">
+      <input type="text" id="city" name="city" value="{{city}}" readonly>
+      <label>City</label>
+    </section>
+    
+    <section class="inputLabel">
+      <input type="number" name="area" required onkeyup="this.setAttribute('value', this.value)">
+      <label>Area in sqft</label>
+    </section>
+
+    <section>
+      <p style='color:#f8f8f8;'>Choose Location:</p>
+      <select name="loc" id='loc'>
+        {% for location in locations %}
+        <option  value='{{location}}'>{{location}}</option>
+        {% endfor %}
+        
+      </select>
+    </section>
+
+    <p class="qty" >
+      <label for="qty" style='color:#f8f8f8;'>BHK:</label>
+      <input type="number" name="bhk" id="qty" min="1" max="10" step="1" value="1">
+    </p>
+
+    <section>
+      <input type="submit" value='Predict Price'>
+    </section>
+
+  </fieldset>
+</form>
+
+</body>
+<!-- partial -->
+  <script  src="{{ url_for('static', filename='script.js') }}"></script>
+  <script  src="{{ url_for('static', filename='i_script.js') }}"></script>
+
+</body>
+</html>

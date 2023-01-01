@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Home</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/fonts.css">
+    <link rel="stylesheet" href="static/css/style.css" id="main-styles-link">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="page">
+      
+      <section class="section novi-background section-md text-center">
+        <div class="container">
+          <h3 class="text-uppercase font-weight-bold wow-outer"><span class="wow slideInDown">Choose City</span></h3>
+          <div class="row row-lg-50 row-35 offset-top-2">
+            {%for city in city%}
+            <div class="col-md-6 wow-outer">
+              <article class="post-modern wow slideInLeft"><a class="post-modern-media" href="/city/{{city}}"><img src="static/images/{{city}}.jpg" alt="" width="571" height="353"/></a>
+                </article>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+      </section>
+      
+      <footer class="section novi-background footer-advanced bg-gray-700">
+        <div class="footer-advanced-main">
+          <div class="container">
+            <div class="row row-50">
+              
+                <h5 class="font-weight-bold text-uppercase text-white">About Project</h5>
+                <p class="footer-advanced-text">House price prediction with Random Forest Regressor is a machine learning model that is used to predict the price of a house in lakh rupees based on certain input variables such as city, location, area in sqft, and number of bedrooms (bhk). The model is trained on a large dataset of house prices from various cities including Bangalore, Chennai, Delhi, Hyderabad, Kolkata, and Mumbai.
+                  The Random Forest Regressor uses an ensemble of decision trees to make predictions. It works by creating a large number of decision trees and aggregating the predictions made by each tree. This results in a more robust and accurate prediction compared to using a single decision tree.
+                  In this model, the input variables are used to create a decision tree that predicts the price of a house based on the characteristics of the house. For example, if the input variables indicate that the house is located in Bangalore, has a large area in sqft, and has 3 bedrooms, the model will use this information to predict the price of the house.
+                  The accuracy of the model is measured using the mean squared error (MSE) metric. The MSE is calculated by taking the difference between the predicted price and the actual price and squaring it. The lower the MSE, the more accurate the model is. In this case, the model has an accuracy of 89% which means that it is able to predict the price of a house with a high degree of accuracy.
+                  Overall, the Random Forest Regressor is a useful tool for predicting the price of a house based on various input variables such as city, location, area in sqft, and number of bedrooms. It is able to achieve a high level of accuracy and is widely used in the real estate industry for predicting house prices.</p>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div class="footer-advanced-aside">
+          <div class="container">
+            <div class="footer-advanced-layout">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <hr/>
+        </div>
+        
+      </footer>
+    </div>
+    
+    <script src="static/js/core.min.js"></script>
+    <script src="static/js/script.js"></script>
+  </body>
+</html>
